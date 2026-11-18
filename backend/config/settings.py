@@ -13,6 +13,8 @@ import dj_database_url
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+# Set by Vercel in both build and runtime environments.
+ON_VERCEL = bool(os.getenv("VERCEL"))
 load_dotenv(BASE_DIR.parent / ".env")
 
 
@@ -92,7 +94,8 @@ TEMPLATES = [
 DATABASES = {
     "default": dj_database_url.parse(
         os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'db.sqlite3'}"),
-        conn_max_age=600,
+        # Serverless functions should not hold connections open between invocations.
+        conn_max_age=0 if ON_VERCEL else 600,
     )
 }
 
@@ -116,10 +119,16 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
-    "staticfiles": {"BACKEND": "whitenoise.storage.CompressedStaticFilesStorage"},
+    # On Vercel, collectstatic runs at build and the CDN serves the files.
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"
+        if ON_VERCEL
+        else "whitenoise.storage.CompressedStaticFilesStorage"
+    },
 }
 MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "media"
+# Vercel's bundle is read-only; uploads go to /tmp and do not persist (demo only).
+MEDIA_ROOT = Path("/tmp/media") if ON_VERCEL else BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {

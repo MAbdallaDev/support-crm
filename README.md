@@ -202,20 +202,22 @@ Every environment-specific value is read from the environment; nothing is hardco
 
 ## Deployment
 
-The live demo runs on free tiers: **Vercel** (frontend), **Render** (API) and **Neon** (PostgreSQL).
+The live demo runs on free tiers with no card: two **Vercel** projects (API + frontend) and **Neon**
+(PostgreSQL).
 
-| Piece | Config | Notes |
-|---|---|---|
-| API | [`render.yaml`](render.yaml) | Build runs `collectstatic`, `migrate` and `seed_demo`; start is `gunicorn`. Free instances sleep when idle — the first request takes ~1 minute. |
-| Frontend | [`frontend/vercel.json`](frontend/vercel.json) | Vercel project root `frontend/`; set `VITE_API_URL=https://<api-host>/api/v1`. All routes rewrite to `index.html`. |
-| Database | Neon | Paste its connection string into Render as `DATABASE_URL` (append `?sslmode=require`). |
+| Piece | Vercel Root Directory | Config | Notes |
+|---|---|---|---|
+| API | `backend` | [`backend/vercel.json`](backend/vercel.json) | Django runs as one Vercel Function (zero-config detection via `manage.py`). Build runs `migrate` and `seed_demo`; Vercel runs `collectstatic` itself and serves `/static/` from its CDN. |
+| Frontend | `frontend` | [`frontend/vercel.json`](frontend/vercel.json) | Set `VITE_API_URL=https://<api-project>.vercel.app/api/v1`. All routes rewrite to `index.html`. |
+| Database | — | Neon | Its connection string is the API's `DATABASE_URL`. |
 
-Production env on Render: `DEBUG=False`, a generated `SECRET_KEY`, `ALLOWED_HOSTS=.onrender.com`,
-`CORS_ALLOWED_ORIGINS` and `CSRF_TRUSTED_ORIGINS` set to the Vercel URL. The settings refuse to
-start with `DEBUG=False` and the dev `SECRET_KEY`.
+API environment: `DATABASE_URL`, `SECRET_KEY` (long random), `DEBUG=False`,
+`ALLOWED_HOSTS=.vercel.app`, `CORS_ALLOWED_ORIGINS` and `CSRF_TRUSTED_ORIGINS` set to the
+frontend URL, `AI_BACKEND=mock`. The settings refuse to start with `DEBUG=False` and the dev
+`SECRET_KEY`.
 
-It is a public demo: anyone can sign in with the demo logins, and uploaded attachments do not
-survive a Render restart. Redeploying re-runs `seed_demo` and restores the demo data.
+It is a public demo: anyone can sign in with the demo logins, and uploaded attachments live in
+`/tmp` and do not persist. Every deploy re-runs `seed_demo`, which restores the demo data.
 
 ## Architecture
 
