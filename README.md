@@ -1,5 +1,7 @@
 # Customer Support CRM
 
+**Live demo:** https://support-crm-sigma-ruddy.vercel.app · **API docs:** https://support-crm-api.vercel.app/api/v1/docs/ · demo logins below (password `Demo!2345`). The API runs on a free tier; the first request after a quiet period can be slow.
+
 A multi-channel customer support CRM: tickets with SLA tracking, a customer 360 view, a bilingual
 knowledge base, mocked AI assistance, a self-service customer portal, and manager reports.
 
