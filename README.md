@@ -1,6 +1,6 @@
 # Customer Support CRM
 
-**Live demo:** https://support-crm-sigma-ruddy.vercel.app · **API docs:** https://support-crm-api.vercel.app/api/v1/docs/ · demo logins below (password `Demo!2345`). The API runs on a free tier; the first request after a quiet period can be slow.
+**Live demo:** https://mabdalla-crm.vercel.app · **API docs:** https://support-crm-api.vercel.app/api/v1/docs/ · demo logins below (password `Demo!2345`). The API runs on a free tier; the first request after a quiet period can be slow.
 
 A multi-channel customer support CRM: tickets with SLA tracking, a customer 360 view, a bilingual
 knowledge base, mocked AI assistance, a self-service customer portal, and manager reports.
@@ -218,8 +218,9 @@ API environment: `DATABASE_URL`, `SECRET_KEY` (long random), `DEBUG=False`,
 frontend URL, `AI_BACKEND=mock`. The settings refuse to start with `DEBUG=False` and the dev
 `SECRET_KEY`.
 
-It is a public demo: anyone can sign in with the demo logins, and uploaded attachments live in
-`/tmp` and do not persist. To restore the demo data, set `SEED_DEMO=1` and redeploy (then unset it — seeding over the network is slow).
+Uploads are stored in PostgreSQL (`apps/files`, `MEDIA_STORAGE=db` — the default on Vercel, which has
+no persistent disk) and served at `/media/...`; the per-file limit there is 4 MB. Locally they go to
+`MEDIA_ROOT` as usual. It is a public demo: anyone can sign in with the demo logins. To restore the demo data, set `SEED_DEMO=1` and redeploy (then unset it — seeding over the network is slow).
 
 ## Architecture
 

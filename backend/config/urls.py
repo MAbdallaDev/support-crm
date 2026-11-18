@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
+from apps.files.views import serve_file
 from config.health import health
 
 urlpatterns = [
@@ -33,5 +34,8 @@ urlpatterns = [
 # by design: `django.views.static.serve` (what `static()` wires up) has no
 # place in a production deployment, which would front uploads with a real
 # web server or object storage instead.
-if settings.DEBUG:
+if settings.MEDIA_STORAGE == "db":
+    # Database-stored uploads are served by Django in every environment.
+    urlpatterns.append(path(f"{settings.MEDIA_URL.strip('/')}/<path:name>", serve_file, name="media"))
+elif settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "apps.ai",
     "apps.reports",
     "apps.portal",
+    "apps.files",
 ]
 
 MIDDLEWARE = [
@@ -117,8 +118,15 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+# "db" keeps uploads in PostgreSQL (apps.files) — required on serverless hosts
+# with no persistent disk. "filesystem" writes to MEDIA_ROOT (local dev, Docker).
+MEDIA_STORAGE = os.getenv("MEDIA_STORAGE", "db" if ON_VERCEL else "filesystem")
 STORAGES = {
-    "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+    "default": {
+        "BACKEND": "apps.files.storage.DatabaseStorage"
+        if MEDIA_STORAGE == "db"
+        else "django.core.files.storage.FileSystemStorage"
+    },
     # On Vercel, collectstatic runs at build and the CDN serves the files.
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"
@@ -127,8 +135,9 @@ STORAGES = {
     },
 }
 MEDIA_URL = "media/"
-# Vercel's bundle is read-only; uploads go to /tmp and do not persist (demo only).
-MEDIA_ROOT = Path("/tmp/media") if ON_VERCEL else BASE_DIR / "media"
+MEDIA_ROOT = BASE_DIR / "media"
+# Vercel rejects request bodies over 4.5 MB before they reach Django.
+MAX_ATTACHMENT_BYTES = (4 if ON_VERCEL else 10) * 1024 * 1024
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {

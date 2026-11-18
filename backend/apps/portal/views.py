@@ -60,7 +60,7 @@ def _create_attachments(request, ticket, message=None):
                 {
                     "attachments": (
                         f"File is {upload.size} bytes; the limit is "
-                        f"{MAX_ATTACHMENT_BYTES} bytes (10 MB)."
+                        f"{MAX_ATTACHMENT_BYTES} bytes ({MAX_ATTACHMENT_BYTES // (1024 * 1024)} MB)."
                     )
                 }
             )

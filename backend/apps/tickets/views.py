@@ -15,6 +15,7 @@ timestamps and writes the Activity log entry.
 
 import os
 
+from django.conf import settings
 from django.db.models import Prefetch
 from django.utils import timezone
 from drf_spectacular.utils import OpenApiResponse, extend_schema, extend_schema_view
@@ -68,7 +69,8 @@ from apps.tickets.services import sla_service, ticket_service
 # Attachment upload policy
 # ---------------------------------------------------------------------------
 
-MAX_ATTACHMENT_BYTES = 10 * 1024 * 1024  # 10 MB
+# 10 MB locally; 4 MB on Vercel, which rejects larger request bodies.
+MAX_ATTACHMENT_BYTES = settings.MAX_ATTACHMENT_BYTES
 
 ALLOWED_CONTENT_TYPES = {
     "application/pdf",
@@ -302,7 +304,7 @@ class TicketViewSet(ScopedQuerySetMixin, viewsets.ModelViewSet):
             raise ValidationError(
                 {
                     "file": f"File is {upload.size} bytes; the limit is "
-                    f"{MAX_ATTACHMENT_BYTES} bytes (10 MB)."
+                    f"{MAX_ATTACHMENT_BYTES} bytes ({MAX_ATTACHMENT_BYTES // (1024 * 1024)} MB)."
                 }
             )
 
