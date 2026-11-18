@@ -78,10 +78,10 @@ export default function Login({ audience = "staff" }: { audience?: "staff" | "cu
             aria-hidden
             className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[12px] font-bold text-ink"
           >
-            DC
+            SC
           </span>
-          <span className="text-[16px] font-bold" dir="ltr">
-            {t("app.brand")}
+          <span className="text-[16px] font-bold">
+            {t("app.product")}
           </span>
         </div>
 

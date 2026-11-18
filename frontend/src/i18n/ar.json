@@ -1,9 +1,8 @@
 {
   "app": {
     "name": "نظام دعم العملاء",
-    "brand": "Demo Co.",
     "product": "دعم العملاء",
-    "portalProduct": "الدعم"
+    "portalProduct": "بوابة العملاء"
   },
   "nav": {
     "dashboard": "لوحة التحكم",

@@ -57,10 +57,9 @@ const renderChrome = (role: Role) => {
 afterEach(() => vi.clearAllMocks());
 
 describe("AppChrome", () => {
-  it("renders the lockup with the wordmark untranslated", () => {
+  it("renders the lockup with the product name", () => {
     renderChrome("agent");
 
-    expect(screen.getByText("Demo Co.")).toBeInTheDocument();
     expect(screen.getByText(en.app.product)).toBeInTheDocument();
   });
 

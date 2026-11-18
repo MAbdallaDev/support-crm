@@ -1,9 +1,8 @@
 {
   "app": {
     "name": "Customer Support CRM",
-    "brand": "Demo Co.",
     "product": "Support CRM",
-    "portalProduct": "Support"
+    "portalProduct": "Customer Portal"
   },
   "nav": {
     "dashboard": "Dashboard",

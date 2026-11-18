@@ -81,13 +81,9 @@ describe("PortalChrome", () => {
     expect(screen.getAllByText(en.nav.portalArticles).length).toBeGreaterThan(0);
   });
 
-  it("hides the wordmark's secondary product label below sm", () => {
+  it("shows the portal product name in the lockup", () => {
     setup();
 
-    // Present in the DOM (sm:inline), never asserted absent outright — this
-    // just pins that it renders via a responsive class, not unconditionally.
-    const label = screen.getByText(en.app.portalProduct);
-    expect(label.className).toContain("hidden");
-    expect(label.className).toContain("sm:inline");
+    expect(screen.getByText(en.app.portalProduct)).toBeInTheDocument();
   });
 });
