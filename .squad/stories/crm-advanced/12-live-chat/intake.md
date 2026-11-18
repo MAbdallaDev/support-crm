@@ -3,7 +3,7 @@
 # Story intake
 
 - Folder: `.squad/stories/crm-advanced/12-live-chat/intake.md`
-- Project: **AZM Squad Customer Support CRM** — closing the last unimplemented item in the PDF's
+- Project: **Customer Support CRM** — closing the last unimplemented item in the PDF's
   "Communication Channels" area (Email, WhatsApp, SMS and Web forms are already real label+message
   flows through the existing `Ticket`/`TicketMessage` channel field; "Live chat" has so far been a
   name only — a `Channel.CHAT` choice nothing ever sets from a live conversation).

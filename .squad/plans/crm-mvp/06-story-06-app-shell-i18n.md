@@ -51,7 +51,7 @@ assembly, not design.
    `--sky` (SMS), `--violet` (chat), `--slate` (normal/web). Font stack: `'IBM Plex Sans'` for UI,
    `'IBM Plex Mono'` for ticket numbers and phone numbers. Copy these numbers into Tailwind theme
    tokens; do not eyeball them from a screenshot.
-3. `docs/design/Main.dc.html` — the top chrome exactly: `AZM Squad` wordmark + `Support CRM`
+3. `docs/design/Main.dc.html` — the top chrome exactly: `Demo Co.` wordmark + `Support CRM`
    secondary label, nav items *Dashboard · Tickets · Customers · Knowledge base · Reports · Admin*,
    a 300px search field, an `EN`/`ع` two-state toggle (`height:32px`, active state
    `background:#14171f;color:#fff`), and a user chip (30px avatar circle, name + "Tier 2 · Billing"
@@ -60,7 +60,7 @@ assembly, not design.
    copy, and the form panel with demo-login hints. **The demo-login box's copy in the artboard is
    illustrative** — the real logins are in `backend/apps/tickets/demo_content.py` (Context item 7).
 5. `docs/design/TicketWorkspaceRTL.dc.html` — the flipped chrome. Confirm the wordmark stays
-   `AZM Squad` (a brand name, not translated) while every nav label, the search placeholder and the
+   `Demo Co.` (a brand name, not translated) while every nav label, the search placeholder and the
    user chip's role text are Arabic, and note that ticket numbers, phone numbers and emails inside
    Arabic text stay `dir="ltr"` (e.g. `<span dir="ltr">TK-4796</span>`).
 6. `backend/apps/accounts/serializers.py` (`MeSerializer`) — the exact shape of `GET /auth/me/`:

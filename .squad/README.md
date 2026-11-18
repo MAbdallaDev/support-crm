@@ -2,7 +2,7 @@
 
 This folder is managed by [squad-kit](https://github.com/AzmSquad/squad-kit).
 
-- **Project:** azm-support-crm
+- **Project:** support-crm
 - **Language:** python
 - **Tracker:** none
 

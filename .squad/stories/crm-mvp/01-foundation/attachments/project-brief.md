@@ -1,7 +1,7 @@
-# AZM Squad — Customer Support CRM
+# Customer Support CRM
 ## Project brief: stack, scope split, and story map
 
-Source of truth: `azm_squad_customer_support_crm.pdf` (12 feature areas).
+Source of truth: `docs/requirements.md` (12 feature areas).
 Author: Mostafa Abdallah · Purpose: company skills-assessment project (AI-assisted development).
 Timeline: **2 days (~16 hours)** for the MVP.
 

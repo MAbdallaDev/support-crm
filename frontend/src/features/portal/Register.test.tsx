@@ -13,7 +13,7 @@ let mock: ApiMock;
 
 const fill = () => {
   fireEvent.change(screen.getByLabelText("Full name"), { target: { value: "Abdulaziz Al-Rashid" } });
-  fireEvent.change(screen.getByLabelText("Email"), { target: { value: "ops@gulftrading.sa" } });
+  fireEvent.change(screen.getByLabelText("Email"), { target: { value: "ops@gulftrading.test" } });
   fireEvent.change(screen.getByLabelText("Password"), { target: { value: "SuperSecret1" } });
 };
 
@@ -30,7 +30,7 @@ describe("registration", () => {
   it("posts to /portal/register/ and signs the user in on success", async () => {
     mock.on("/portal/register/", () => ({
       access: "a", refresh: "r",
-      user: { id: 11, username: "ops@gulftrading.sa", email: "ops@gulftrading.sa", full_name: "Abdulaziz Al-Rashid", role: "customer", department: null, branch: null, tier: 1, language: "en", is_available: true },
+      user: { id: 11, username: "ops@gulftrading.test", email: "ops@gulftrading.test", full_name: "Abdulaziz Al-Rashid", role: "customer", department: null, branch: null, tier: 1, language: "en", is_available: true },
     }));
 
     renderWithDataRouter(<Register />, { queryClient: makeQueryClient() });

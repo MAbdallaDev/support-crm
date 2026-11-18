@@ -60,7 +60,7 @@ describe("AppChrome", () => {
   it("renders the lockup with the wordmark untranslated", () => {
     renderChrome("agent");
 
-    expect(screen.getByText("AZM Squad")).toBeInTheDocument();
+    expect(screen.getByText("Demo Co.")).toBeInTheDocument();
     expect(screen.getByText(en.app.product)).toBeInTheDocument();
   });
 

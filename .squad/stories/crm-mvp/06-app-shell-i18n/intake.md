@@ -3,7 +3,7 @@
 # Story intake
 
 - Folder: `.squad/stories/crm-mvp/06-app-shell-i18n/intake.md`
-- Project: **AZM Squad Customer Support CRM** — a 2-day MVP skills-assessment build.
+- Project: **Customer Support CRM** — a 2-day MVP skills-assessment build.
 - The planner reads **this file and the files in `attachments/`**, nothing else.
 
 ---
@@ -71,7 +71,7 @@ AUTH
     landing on /portal/* is redirected to /app/dashboard.
 
 SHELL
-6.  Top chrome matching the design artboard: the AZM Squad / Support CRM lockup, navigation
+6.  Top chrome matching the design artboard: the Demo Co. / Support CRM lockup, navigation
     for Dashboard, Tickets, Customers, Knowledge base, Reports and Admin, a global search
     field, an EN / ar language toggle, and a user chip showing name, tier and team with a
     menu offering profile and sign out. The Admin item links to Django admin at /admin/.

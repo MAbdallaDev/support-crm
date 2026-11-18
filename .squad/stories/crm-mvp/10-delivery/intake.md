@@ -3,7 +3,7 @@
 # Story intake
 
 - Folder: `.squad/stories/crm-mvp/10-delivery/intake.md`
-- Project: **AZM Squad Customer Support CRM** — a 2-day MVP skills-assessment build.
+- Project: **Customer Support CRM** — a 2-day MVP skills-assessment build.
 - The planner reads **this file and the files in `attachments/`**, nothing else.
 
 ---

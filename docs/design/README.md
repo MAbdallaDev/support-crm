@@ -1,4 +1,4 @@
-# Design — AZM Squad Customer Support CRM
+# Design — Customer Support CRM
 
 Artboards specifying every screen in the MVP, plus post-hand-in redesigns (global search, live
 chat). Published canvas:

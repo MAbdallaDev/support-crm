@@ -4,7 +4,7 @@
 ## Prerequisites
 
 - None. This is the first story. The repository currently contains only `docs/`, `.squad/`,
-  `.gitignore` and `azm_squad_customer_support_crm.pdf` — there is no `backend/` or `frontend/` yet.
+  `.gitignore` and `docs/requirements.md` — there is no `backend/` or `frontend/` yet.
 - Git is already initialised on branch `main` with a planning-baseline commit and a repo-local
   identity. **Do not** run `git init`, change `user.name`/`user.email`, or touch the remote.
 
@@ -112,7 +112,7 @@ the files.
 
 ```python
 """
-Django settings for the AZM Squad Customer Support CRM.
+Django settings for the Customer Support CRM.
 
 Every environment-specific value is read from the environment. `.env.example`
 documents the full set.
@@ -224,7 +224,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "AZM Squad Customer Support CRM API",
+    "TITLE": "Customer Support CRM API",
     "DESCRIPTION": "Multi-channel customer support CRM — tickets, SLA, knowledge base, portal.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
@@ -468,7 +468,7 @@ The JWT request/refresh interceptor is **story 06**. Do not add it here.
 
 ```json
 {
-  "app": { "name": "AZM Squad Support CRM" },
+  "app": { "name": "Customer Support CRM" },
   "nav": { "dashboard": "Dashboard", "login": "Sign in" },
   "health": { "api": "API", "database": "Database" }
 }
@@ -478,7 +478,7 @@ The JWT request/refresh interceptor is **story 06**. Do not add it here.
 
 ```json
 {
-  "app": { "name": "نظام دعم عملاء أزم سكواد" },
+  "app": { "name": "نظام دعم العملاء" },
   "nav": { "dashboard": "لوحة التحكم", "login": "تسجيل الدخول" },
   "health": { "api": "الواجهة البرمجية", "database": "قاعدة البيانات" }
 }
@@ -653,7 +653,7 @@ one-line comment each: `SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS`, `CORS_ALLOWED_ORI
 ### 18 — README
 
 **Create file: `README.md`** with, in this order: what the project is and that it implements the 12
-requirement areas in `azm_squad_customer_support_crm.pdf`; the Docker quickstart
+requirement areas in `docs/requirements.md`; the Docker quickstart
 (`cp .env.example .env` then `docker compose up --build`); the three URLs (API `:8000`, docs
 `/api/v1/docs/`, web `:5173`); how to run without Docker (SQLite fallback); how to run both test
 suites; a short architecture section pointing at `docs/00-project-brief.md`; and a **Status** section

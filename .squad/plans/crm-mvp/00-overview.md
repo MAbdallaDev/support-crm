@@ -1,6 +1,6 @@
 # crm-mvp — plan overview
 
-Entry point for the **crm-mvp** feature: a 2-day MVP of the AZM Squad Customer Support CRM
+Entry point for the **crm-mvp** feature: a 2-day MVP of the Customer Support CRM
 (Django 5 + DRF, React 19 + Vite, PostgreSQL, Docker Compose). Stories execute in order by their
 `NN` prefix. Scope, stack rationale and the core-vs-deferred split live in `docs/00-project-brief.md`.
 
@@ -448,7 +448,7 @@ Verified against the running stack: signed in as `manager@demo`, `/app/reports` 
 tiles with real 30-day figures and all four charts (including the two designed, not artboard-copied,
 by-channel line and CSAT bar); clicking the "open" tile opened the queue pre-filtered to the
 identical count ("9 open" on both screens). Registered a new portal account against
-`ops@gulftrading.sa` — a seeded customer's email — and the new login landed on `/portal` showing
+`ops@gulftrading.test` — a seeded customer's email — and the new login landed on `/portal` showing
 that customer's existing ticket history; submitted a new ticket and got back a real number and
 target date; replied on it; opened an already-CSAT-rated seeded ticket (`TK-0091`) on a fresh page
 load and saw the **read-only** star rating, not an empty input — proving the reload path, not just

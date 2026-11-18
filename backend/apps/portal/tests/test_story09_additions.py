@@ -44,12 +44,12 @@ def test_registering_with_a_seeded_customers_email_links_to_that_customer(
     seeded, django_db_blocker
 ):
     with django_db_blocker.unblock():
-        existing = Customer.objects.get(email__iexact="ops@gulftrading.sa")
+        existing = Customer.objects.get(email__iexact="ops@gulftrading.test")
 
         response = APIClient().post(
             "/api/v1/portal/register/",
             {
-                "email": "ops@gulftrading.sa",
+                "email": "ops@gulftrading.test",
                 "password": "SuperSecret1",
                 "full_name": "Abdulaziz Al-Rashid",
             },

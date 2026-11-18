@@ -1,4 +1,4 @@
-# AZM Squad Customer Support CRM — hand-in summary
+# Customer Support CRM — hand-in summary
 
 This is the single document a reviewer needs to assess the project. It links out to everything else
 rather than repeating it — [`README.md`](../README.md) for quickstart and architecture,

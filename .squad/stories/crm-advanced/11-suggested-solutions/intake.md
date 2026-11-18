@@ -3,7 +3,7 @@
 # Story intake
 
 - Folder: `.squad/stories/crm-advanced/11-suggested-solutions/intake.md`
-- Project: **AZM Squad Customer Support CRM** — closing the fourth of five PDF "AI Features"
+- Project: **Customer Support CRM** — closing the fourth of five PDF "AI Features"
   sub-bullets, done post-hand-in as a small, scoped Phase-2 slice rather than the whole Phase-2
   backlog at once.
 - The planner reads **this file and the files in `attachments/`**, nothing else.

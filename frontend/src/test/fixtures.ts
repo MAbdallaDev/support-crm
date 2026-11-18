@@ -113,7 +113,7 @@ export const customer = (over: Partial<CustomerDetail> = {}): CustomerDetail => 
   id: 10,
   name: "Khalid Omari",
   company: "Omari Contracting",
-  email: "k.omari@omaricon.sa",
+  email: "k.omari@omaricon.test",
   phone: "+966 56 118 3305",
   whatsapp: "+966 56 118 3305",
   tier: "enterprise",

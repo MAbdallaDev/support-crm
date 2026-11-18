@@ -1,9 +1,9 @@
-# AZM Squad — Customer Support CRM
+# Customer Support CRM
 
 A multi-channel customer support CRM: tickets with SLA tracking, a customer 360 view, a bilingual
 knowledge base, mocked AI assistance, a self-service customer portal, and manager reports.
 
-It implements the twelve requirement areas in [`azm_squad_customer_support_crm.pdf`](azm_squad_customer_support_crm.pdf) —
+It implements the twelve requirement areas in [`docs/requirements.md`](docs/requirements.md) —
 see [Requirement coverage](#requirement-coverage) below for exactly where each one lives.
 
 **Stack:** Django 5 + Django REST Framework · PostgreSQL 16 · React 19 + TypeScript + Vite ·

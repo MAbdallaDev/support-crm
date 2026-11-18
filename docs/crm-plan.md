@@ -1,9 +1,9 @@
-# AZM Squad Customer Support CRM — 2-day MVP plan
+# Customer Support CRM — 2-day MVP plan
 
 ## Context
 
 Mostafa's company set a skills-assessment task: build the Customer Support CRM described in
-`~/Desktop/azm/Full_Stack_Program/azm_squad_customer_support_crm.pdf` (12 feature areas) using
+`docs/requirements.md` (12 feature areas) using
 AI-assisted development. He is an Odoo developer; this project deliberately avoids Odoo.
 
 `docs/00-project-brief.md` was first drafted recommending FastAPI over a 12-story / 2–3 week
@@ -91,7 +91,7 @@ source of truth — the plan below was revised to match it, not the other way ro
 
 **What his artboard establishes** (and the MVP must honour):
 
-- Top chrome: `AZM Squad | Support CRM` + nav *Dashboard · Tickets · Customers · Knowledge base ·
+- Top chrome: `Demo Co. | Support CRM` + nav *Dashboard · Tickets · Customers · Knowledge base ·
   Reports · Admin*, global search, `EN / ع` toggle, user chip with tier and team
 - Three-pane ticket workspace: queue (left) · conversation (centre) · context (right)
 - Queue cards: priority badge, ticket number `TK-4796`, **channel badge**, subject, customer,
@@ -313,7 +313,7 @@ partly on a commit history showing plan-then-implement order, and there is curre
 all. Every artifact so far is uncommitted. If story 01's code lands before the planning artifacts are
 committed, the ordering evidence is gone permanently.
 
-1. **`git init`** in `~/Desktop/azm/crm`, default branch `main`, remote `origin` set to
+1. **`git init`** in `~/crm`, default branch `main`, remote `origin` set to
    `https://github.com/MAbdallaDev/azm-support-crm.git` (public, created by Mostafa). Commit identity
    set repo-locally before the first commit, so commits link to the `MAbdallaDev` GitHub profile.
 
@@ -499,7 +499,7 @@ comparison, which is worth keeping: it shows the alternative was evaluated rathe
 
 **Bring it up**
 ```bash
-cd ~/Desktop/azm/crm && docker compose up --build
+cd ~/crm && docker compose up --build
 ```
 `api` on `http://localhost:8000`, `web` on `http://localhost:5173`, Postgres on `5432`.
 

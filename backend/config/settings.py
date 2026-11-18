@@ -1,5 +1,5 @@
 """
-Django settings for the AZM Squad Customer Support CRM.
+Django settings for the Customer Support CRM.
 
 Every environment-specific value is read from the environment. `.env.example`
 at the repository root documents the full set.
@@ -135,7 +135,7 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "AZM Squad Customer Support CRM API",
+    "TITLE": "Customer Support CRM API",
     "DESCRIPTION": "Multi-channel customer support CRM — tickets, SLA, knowledge base, portal.",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,

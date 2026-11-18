@@ -50,14 +50,14 @@ describe("the Customer tab", () => {
   it("is the default tab and shows the customer's own record, not the ticket's", async () => {
     setup();
 
-    expect(await screen.findByText("k.omari@omaricon.sa")).toBeInTheDocument();
+    expect(await screen.findByText("k.omari@omaricon.test")).toBeInTheDocument();
     expect(screen.getByText("Riyadh")).toBeInTheDocument();
     expect(screen.getByTestId("context-tab-customer")).toHaveAttribute("aria-pressed", "true");
   });
 
   it("links to the customer's own 360 page", async () => {
     setup();
-    await screen.findByText("k.omari@omaricon.sa");
+    await screen.findByText("k.omari@omaricon.test");
 
     const link = screen.getByText("View customer").closest("a");
     expect(link).toHaveAttribute("href", "/app/customers/10");

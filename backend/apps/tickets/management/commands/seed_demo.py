@@ -252,7 +252,7 @@ class Command(BaseCommand):
         username, first, last, role, language = content.CUSTOMER_LOGIN
         out = {}
 
-        named_customer = customers["support@najdlogistics.sa"]
+        named_customer = customers["support@najdlogistics.test"]
         user, _ = User.objects.get_or_create(
             username=username, defaults={"email": f"{username}.local"}
         )

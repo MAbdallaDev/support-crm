@@ -53,60 +53,60 @@ CUSTOMER_LOGIN = ("customer@demo", "Hind", "Al-Subaie", "customer", "ar")
 
 CUSTOMERS = [
     # email, name, company, tier, branch, language, phone, whatsapp
-    ("ops@gulftrading.sa", "Abdulaziz Al-Rashid", "Arabian Gulf Trading Co.",
-     "enterprise", "riyadh", "ar", "+966 11 462 7710", "+966 55 462 7710"),
-    ("support@najdlogistics.sa", "Hind Al-Subaie", "Najd Logistics",
-     "enterprise", "dammam", "ar", "+966 13 833 2140", "+966 50 833 2140"),
-    ("hello@redseahospitality.com", "Marwan Sabbagh", "Red Sea Hospitality Group",
-     "enterprise", "jeddah", "en", "+966 12 611 9082", "+966 54 611 9082"),
-    ("accounts@tahalufmedical.sa", "Reem Al-Juhani", "Tahaluf Medical Supplies",
-     "premium", "riyadh", "ar", "+966 11 209 3355", "+966 56 209 3355"),
-    ("team@almahadigital.com", "Ziad Barakat", "Almaha Digital",
-     "premium", "jeddah", "en", "+966 12 774 5501", "+966 53 774 5501"),
-    ("it@sadeemcloud.sa", "Bandar Al-Mutairi", "Sadeem Cloud Services",
-     "premium", "riyadh", "en", "+966 11 558 0192", "+966 55 558 0192"),
-    ("info@baytalnoor.sa", "Manal Al-Amoudi", "Bayt Al-Noor Furnishing",
-     "standard", "jeddah", "ar", "+966 12 640 1177", "+966 59 640 1177"),
-    ("admin@rawabicontracting.sa", "Turki Al-Harthy", "Rawabi Contracting",
-     "standard", "dammam", "ar", "+966 13 891 4408", "+966 50 891 4408"),
-    ("contact@manazelre.sa", "Ghada Al-Sudairy", "Manazel Real Estate",
-     "standard", "riyadh", "ar", "+966 11 330 7726", "+966 58 330 7726"),
-    ("office@qimamedu.sa", "Salman Al-Anzi", "Qimam Education",
-     "standard", "dammam", "en", "+966 13 720 6614", "+966 55 720 6614"),
+    ("ops@gulftrading.test", "Abdulaziz Al-Rashid", "Arabian Gulf Trading Co.",
+     "enterprise", "riyadh", "ar", "+966 11 000 0101", "+966 50 000 0101"),
+    ("support@najdlogistics.test", "Hind Al-Subaie", "Najd Logistics",
+     "enterprise", "dammam", "ar", "+966 11 000 0102", "+966 50 000 0102"),
+    ("hello@redseahospitality.test", "Marwan Sabbagh", "Red Sea Hospitality Group",
+     "enterprise", "jeddah", "en", "+966 11 000 0103", "+966 50 000 0103"),
+    ("accounts@tahalufmedical.test", "Reem Al-Juhani", "Tahaluf Medical Supplies",
+     "premium", "riyadh", "ar", "+966 11 000 0104", "+966 50 000 0104"),
+    ("team@almahadigital.test", "Ziad Barakat", "Almaha Digital",
+     "premium", "jeddah", "en", "+966 11 000 0105", "+966 50 000 0105"),
+    ("it@sadeemcloud.test", "Bandar Al-Mutairi", "Sadeem Cloud Services",
+     "premium", "riyadh", "en", "+966 11 000 0106", "+966 50 000 0106"),
+    ("info@baytalnoor.test", "Manal Al-Amoudi", "Bayt Al-Noor Furnishing",
+     "standard", "jeddah", "ar", "+966 11 000 0107", "+966 50 000 0107"),
+    ("admin@rawabicontracting.test", "Turki Al-Harthy", "Rawabi Contracting",
+     "standard", "dammam", "ar", "+966 11 000 0108", "+966 50 000 0108"),
+    ("contact@manazelre.test", "Ghada Al-Sudairy", "Manazel Real Estate",
+     "standard", "riyadh", "ar", "+966 11 000 0109", "+966 50 000 0109"),
+    ("office@qimamedu.test", "Salman Al-Anzi", "Qimam Education",
+     "standard", "dammam", "en", "+966 11 000 0110", "+966 50 000 0110"),
 ]
 
 # customer email -> [(name, position, is_primary), ...]
 CONTACTS = {
-    "ops@gulftrading.sa": [
+    "ops@gulftrading.test": [
         ("Abdulaziz Al-Rashid", "Operations Director", True),
         ("Fatimah Al-Nasser", "Finance Manager", False),
         ("Tariq Bin Saleh", "IT Coordinator", False),
     ],
-    "support@najdlogistics.sa": [
+    "support@najdlogistics.test": [
         ("Hind Al-Subaie", "Head of Customer Service", True),
         ("Majed Al-Faraj", "Fleet Supervisor", False),
     ],
-    "hello@redseahospitality.com": [
+    "hello@redseahospitality.test": [
         ("Marwan Sabbagh", "Group IT Manager", True),
         ("Dana Khoury", "Front Office Manager", False),
         ("Ahmed Fathy", "Revenue Analyst", False),
     ],
-    "accounts@tahalufmedical.sa": [
+    "accounts@tahalufmedical.test": [
         ("Reem Al-Juhani", "Accounts Payable Lead", True),
         ("Ibrahim Al-Sayed", "Procurement Officer", False),
     ],
-    "team@almahadigital.com": [("Ziad Barakat", "Founder", True)],
-    "it@sadeemcloud.sa": [
+    "team@almahadigital.test": [("Ziad Barakat", "Founder", True)],
+    "it@sadeemcloud.test": [
         ("Bandar Al-Mutairi", "Platform Lead", True),
         ("Lama Al-Qadi", "Support Engineer", False),
     ],
-    "info@baytalnoor.sa": [("Manal Al-Amoudi", "Owner", True)],
-    "admin@rawabicontracting.sa": [
+    "info@baytalnoor.test": [("Manal Al-Amoudi", "Owner", True)],
+    "admin@rawabicontracting.test": [
         ("Turki Al-Harthy", "Office Manager", True),
         ("Saeed Al-Balawi", "Site Accountant", False),
     ],
-    "contact@manazelre.sa": [("Ghada Al-Sudairy", "Leasing Manager", True)],
-    "office@qimamedu.sa": [
+    "contact@manazelre.test": [("Ghada Al-Sudairy", "Leasing Manager", True)],
+    "office@qimamedu.test": [
         ("Salman Al-Anzi", "Registrar", True),
         ("Wafa Al-Hazmi", "Bursar", False),
     ],
