@@ -314,7 +314,7 @@ all. Every artifact so far is uncommitted. If story 01's code lands before the p
 committed, the ordering evidence is gone permanently.
 
 1. **`git init`** in `~/crm`, default branch `main`, remote `origin` set to
-   `https://github.com/MAbdallaDev/azm-support-crm.git` (public, created by Mostafa). Commit identity
+   `https://github.com/MAbdallaDev/support-crm.git` (public, created by Mostafa). Commit identity
    set repo-locally before the first commit, so commits link to the `MAbdallaDev` GitHub profile.
 
 2. **Fix the ignore rule.** squad-kit's managed `.gitignore` block excludes
