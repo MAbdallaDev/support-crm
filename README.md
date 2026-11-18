@@ -207,7 +207,7 @@ The live demo runs on free tiers with no card: two **Vercel** projects (API + fr
 
 | Piece | Vercel Root Directory | Config | Notes |
 |---|---|---|---|
-| API | `backend` | [`backend/vercel.json`](backend/vercel.json) | Django runs as one Vercel Function (zero-config detection via `manage.py`). Build runs `migrate` and `seed_demo`; Vercel runs `collectstatic` itself and serves `/static/` from its CDN. |
+| API | `backend` | [`backend/vercel.json`](backend/vercel.json) | Django runs as one Vercel Function (zero-config detection via `manage.py`). Build runs `migrate` (and `seed_demo` when the env var `SEED_DEMO=1`); Vercel runs `collectstatic` itself and serves `/static/` from its CDN. |
 | Frontend | `frontend` | [`frontend/vercel.json`](frontend/vercel.json) | Set `VITE_API_URL=https://<api-project>.vercel.app/api/v1`. All routes rewrite to `index.html`. |
 | Database | — | Neon | Its connection string is the API's `DATABASE_URL`. |
 
@@ -217,7 +217,7 @@ frontend URL, `AI_BACKEND=mock`. The settings refuse to start with `DEBUG=False`
 `SECRET_KEY`.
 
 It is a public demo: anyone can sign in with the demo logins, and uploaded attachments live in
-`/tmp` and do not persist. Every deploy re-runs `seed_demo`, which restores the demo data.
+`/tmp` and do not persist. To restore the demo data, set `SEED_DEMO=1` and redeploy (then unset it — seeding over the network is slow).
 
 ## Architecture
 

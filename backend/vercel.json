@@ -1,7 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "python manage.py migrate --noinput && python manage.py seed_demo",
+  "regions": [
+    "fra1"
+  ],
+  "buildCommand": "python manage.py migrate --noinput && if [ \"$SEED_DEMO\" = \"1\" ]; then python manage.py seed_demo; fi",
   "functions": {
-    "config/wsgi.py": { "maxDuration": 60 }
+    "config/wsgi.py": {
+      "maxDuration": 60
+    }
   }
 }
